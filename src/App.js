@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from "react";
 
 function App() {
+  //let name = '';
+  const [name,setName] = useState('123')
+  const plus = (e) => {
+    console.log(e)
+    console.log('PLUS' + name)
+  };
+  const inputChange = (e) => {
+    console.log(e.target.value)
+    //name = e.target.value;
+    setName(e.target.value)
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <h1>-{name}-</h1>
+      <button onClick = {() => plus(123)}>Click me!</button>
+      <input onChange = {inputChange}/>
+
     </div>
   );
 }
